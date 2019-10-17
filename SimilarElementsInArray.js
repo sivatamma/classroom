@@ -2,13 +2,13 @@ function getSimilarElements(firstArr, secondArr) {
   if(!(Array.isArray(firstArr) && Array.isArray(secondArr))) {
     console.log("Arguments are invalid");
   }
-	let i=0, j=0, found=false;
+  let i=0, j=0, found=false, similarElements=[];
   while(secondArr.length>j && firstArr.length >i) {
     if(firstArr[i] > secondArr[j]) {
       j++;
     } else if(firstArr[i] === secondArr[j]) {
       found = true;
-      console.log(firstArr[i]);
+      similarElements.push(firstArr[i]);
       i++;
       j++;
     } else {
@@ -17,6 +17,8 @@ function getSimilarElements(firstArr, secondArr) {
   }
   if(!found) {
     console.log("No Similar Elements Found");
+  } else {
+    console.log(similarElements);
   }
 }
 
